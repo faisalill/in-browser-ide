@@ -12,11 +12,10 @@ const Navbar = (props) => {
                 // console.log(props.language)
             }}>
                 <option value='javascript'>Javascript</option>
-                <option value='c'>C</option>
+                <option value='objective-c'>C</option>
                 <option value='cpp'>C++</option>
                 <option value='python'>Python</option>
-                <option value='rust'>Rust</option>
-                <option value='html'>HTML</option>
+                {/* <option value='rust'>Rust</option> */}
             </select>
             <ThemeChanger  monaco={props.monaco} theme={props.theme} setTheme={props.setTheme}/>
         </div>
