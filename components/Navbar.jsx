@@ -2,7 +2,7 @@ import React from 'react'
 import ThemeChanger from './ThemeChanger'
 const Navbar = (props) => {
   return (
-    <div className='bg-black flex justify-around p-3'>
+    <div className='bg-black flex justify-around p-3 w-screen'>
         <div className='text-white font-logoFont text-xl '>Online IDE</div>
         <div className='flex flex-row place-items-center gap-3'>
             <select
