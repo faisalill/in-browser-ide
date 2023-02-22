@@ -31,12 +31,7 @@ const IDE = () => {
       >Reset</button>
       <button className='bg-blue-600 h-9 px-3 rounded-lg'
       onClick={()=>{
-        axios.post('http://localhost:3001/execute', {
-          code: code,
-          language: language
-        }).then((res)=>{
-          setOutput(res.data)
-        })
+        console.log(process.env.NEXT_PUBLIC_IP_ADDRESS_PORT)
       }}
       >Run</button>
     </div>
