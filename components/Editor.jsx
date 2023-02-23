@@ -13,16 +13,12 @@ import { BlackboardTheme } from '@/themes/Blackboard'
 import { CloudsMidnightTheme } from '@/themes/Clouds Midnight'
 import { BrillianceBlackTheme } from '@/themes/Brilliance Black'
 import { solarizedDarkTheme } from '@/themes/Solarized-dark'
-import https from 'https'
+
 const headers = {
   'X-Auth-Token': process.env.NEXT_PUBLIC_X_TOKEN,
   'X-Auth-User': process.env.NEXT_PUBLIC_X_TOKEN,
   'Content-Type': 'application/json'
 }
-
-const agent = new https.Agent({
-  rejectUnauthorized: false
-})
 
 const IDE = () => {
   const [language, setLanguage] = useState(['javascript', '63'])
@@ -121,11 +117,9 @@ const IDE = () => {
             "source_code": code,
             "language_id": language[1],
             "stdin": ""
-           }, {headers: headers,
-            httpsAgent: agent})
+           }, {headers: headers})
            .then((res)=>{
-            axios.get(`${process.env.NEXT_PUBLIC_URL}/submissions/${res.data.token}?base64_encoded=false&fields=`, {headers: headers,
-              httpsAgent: agent})
+            axios.get(`${process.env.NEXT_PUBLIC_URL}/submissions/${res.data.token}?base64_encoded=false&fields=`, {headers: headers})
             .then((res)=>{
               setOutput(res.data)
             })
