@@ -9,7 +9,7 @@ import { BlackboardTheme } from '@/themes/Blackboard'
 import { CloudsMidnightTheme } from '@/themes/Clouds Midnight'
 import { BrillianceBlackTheme } from '@/themes/Brilliance Black'
 import { solarizedDarkTheme } from '@/themes/Solarized-dark'
-
+import { TomorrowNightTheme } from '@/themes/Tomorrow-Night'
 
 const ThemeChanger = (props) => {
     const {monaco, theme, setTheme} = props
@@ -24,6 +24,7 @@ const ThemeChanger = (props) => {
         monaco.editor.defineTheme('CloudsMidnight', CloudsMidnightTheme)  
         monaco.editor.defineTheme('BrillianceBlack', BrillianceBlackTheme)
         monaco.editor.defineTheme('SolarizedDark', solarizedDarkTheme)
+        monaco.editor.defineTheme('TomorrowNight', TomorrowNightTheme)
     }
   return (
     <div>
@@ -32,9 +33,6 @@ const ThemeChanger = (props) => {
         onChange={(e)=>{
             setTheme(e.target.value)
         }}>
-            <option  value='vs-dark'>Vscode Dark</option>
-            <option value='vs'>Vscode Light</option>
-            <option value='hc-black'>Hs Black</option>
             <option value='Monokai'>Monokai</option>
             <option value='GitHubDark'>GitHub Dark</option>
             <option value='Twilight'>Twilight</option>
@@ -45,7 +43,8 @@ const ThemeChanger = (props) => {
             <option value='CloudsMidnight'>Clouds Midnight</option>
             <option value='BrillianceBlack'>Brilliance Black</option>
             <option value='SolarizedDark'>Solarized Dark</option>
-        </select>
+            <option value='TomorrowNight'>Tomorrow Night</option>
+       </select>
     </div>
   )
 }

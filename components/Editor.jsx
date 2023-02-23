@@ -12,7 +12,7 @@ const headers = {
 
 const IDE = () => {
   const [language, setLanguage] = useState(['javascript', '63'])
-  const [Theme, setTheme] = useState('vs-dark')
+  const [Theme, setTheme] = useState('TomorrowNight')
   const [code, setCode] = useState(`//type anything here`)
   const [output, setOutput] = useState()
   const monaco = useMonaco();

@@ -1,4 +1,4 @@
-{
+export const TomorrowNightTheme = {
   "base": "vs-dark",
   "inherit": true,
   "rules": [
