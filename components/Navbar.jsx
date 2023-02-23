@@ -8,14 +8,13 @@ const Navbar = (props) => {
             <select
             className='border-2 border-black rounded-md  bg-gray-900 p-1 text-white' 
             onChange={(e)=>{
-                props.setLanguage(e.target.value)
-                // console.log(props.language)
+                props.setLanguage([e.target.value.split(',')[0], e.target.value.split(',')[1]])                // console.log(props.language)
             }}>
-                <option value='javascript'>Javascript</option>
-                <option value='objective-c'>C</option>
-                <option value='cpp'>C++</option>
-                <option value='python'>Python</option>
-                <option value='rust'>Rust</option>
+                <option value={['javascript', '63']}  >Javascript</option>
+                <option value={['objective-c', '75']} >C</option>
+                <option value={['cpp', '76']}>C++</option>
+                <option value={['python', '70']} >Python</option>
+                <option value={['rust', '73']} >Rust</option>
             </select>
             <ThemeChanger  monaco={props.monaco} theme={props.theme} setTheme={props.setTheme}/>
         </div>
