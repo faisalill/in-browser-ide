@@ -9,3 +9,11 @@ html,body{
   height: 100%;
   width: 100%;
 }
+@layer components{
+   .code-param{
+    @apply text-red-500;
+   }
+   .output-param{
+    @apply text-blue-800;
+   }
+}

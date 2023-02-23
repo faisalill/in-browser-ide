@@ -30,20 +30,22 @@ const ThemeChanger = (props) => {
     <div>
         <select
         className='border-2 border-black rounded-md bg-gray-900 p-1 text-white'
+        style={{
+            backgroundColor: props.WebSiteTheme.colors['editor.selectionBackground'],
+          }}
         onChange={(e)=>{
-            setTheme(e.target.value)
+            setTheme([e.target.value.split(',')[0], e.target.value.split(',')[1]])
         }}>
-            <option value='Monokai'>Monokai</option>
-            <option value='GitHubDark'>GitHub Dark</option>
-            <option value='Twilight'>Twilight</option>
-            <option value='Dracula'>Dracula</option>
-            <option value='TomorrowNightBlue'>Tomorrow Night Blue</option>
-            <option value='NightOwl'>Night Owl</option>
-            <option value='Blackboard'>Blackboard</option>
-            <option value='CloudsMidnight'>Clouds Midnight</option>
-            <option value='BrillianceBlack'>Brilliance Black</option>
-            <option value='SolarizedDark'>Solarized Dark</option>
-            <option value='TomorrowNight'>Tomorrow Night</option>
+            <option value={['TomorrowNight', TomorrowNightTheme]}>Tomorrow Night</option>
+            <option value={['Monokai', MonokaiTheme]}>Monokai</option>
+            <option value={['GitHubDark', GitHubDarkTheme]}>GitHub Dark</option>
+            <option value={['Dracula', DraculaTheme]}>Dracula</option>
+            <option value={['TomorrowNightBlue', TomorrowNightBlueTheme]}>Tomorrow Night Blue</option>
+            <option value={['NightOwl', NightOwlTheme]}>Night Owl</option>
+            <option value={['Blackboard', BlackboardTheme]}>Blackboard</option>
+            <option value={['CloudsMidnight', CloudsMidnightTheme]}>Clouds Midnight</option>
+            <option value={['BrillianceBlack', BrillianceBlackTheme]}>Brilliance Black</option>
+            <option value={['SolarizedDark',solarizedDarkTheme]}>Solarized Dark</option>
        </select>
     </div>
   )
