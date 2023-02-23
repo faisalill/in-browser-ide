@@ -8,7 +8,7 @@ import { NightOwlTheme } from '@/themes/Night Owl'
 import { BlackboardTheme } from '@/themes/Blackboard'
 import { CloudsMidnightTheme } from '@/themes/Clouds Midnight'
 import { BrillianceBlackTheme } from '@/themes/Brilliance Black'
-
+import { solarizedDarkTheme } from '@/themes/Solarized-dark'
 
 
 const ThemeChanger = (props) => {
@@ -23,7 +23,7 @@ const ThemeChanger = (props) => {
         monaco.editor.defineTheme('Blackboard', BlackboardTheme);
         monaco.editor.defineTheme('CloudsMidnight', CloudsMidnightTheme)  
         monaco.editor.defineTheme('BrillianceBlack', BrillianceBlackTheme)
-
+        monaco.editor.defineTheme('SolarizedDark', solarizedDarkTheme)
     }
   return (
     <div>
@@ -44,6 +44,7 @@ const ThemeChanger = (props) => {
             <option value='Blackboard'>Blackboard</option>
             <option value='CloudsMidnight'>Clouds Midnight</option>
             <option value='BrillianceBlack'>Brilliance Black</option>
+            <option value='SolarizedDark'>Solarized Dark</option>
         </select>
     </div>
   )

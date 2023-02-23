@@ -1,4 +1,4 @@
-{
+export const solarizedDarkTheme = {
   "base": "vs-dark",
   "inherit": true,
   "rules": [
