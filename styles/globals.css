@@ -16,4 +16,7 @@ html,body{
    .output-param{
     @apply text-blue-800;
    }
+   .output-param-unit{
+    @apply text-purple-700;
+   }
 }

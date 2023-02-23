@@ -26,6 +26,7 @@ const Navbar = (props) => {
                 <option value={['cpp', '76']}>C++</option>
                 <option value={['python', '70']} >Python</option>
                 <option value={['rust', '73']} >Rust</option>
+                <option value={['csharp', '51']} >C#</option>
             </select>
             <ThemeChanger  monaco={props.monaco} WebSiteTheme={props.WebSiteTheme} theme={props.theme} setTheme={props.setTheme}/>
         </div>
