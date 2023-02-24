@@ -27,6 +27,10 @@ const Navbar = (props) => {
                 <option value={['python', '70']} >Python</option>
                 <option value={['rust', '73']} >Rust</option>
                 <option value={['csharp', '51']} >C#</option>
+                <option value={['go', '60']} >Go</option>
+                <option value={['kotlin', '78']} >Kotlin</option>
+                <option value={['swift', '83']} >Swift</option>
+                <option value={['typescript', '74']} >Typescript</option>
             </select>
             <ThemeChanger  monaco={props.monaco} WebSiteTheme={props.WebSiteTheme} theme={props.theme} setTheme={props.setTheme}/>
         </div>

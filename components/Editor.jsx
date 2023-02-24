@@ -14,6 +14,7 @@ import { CloudsMidnightTheme } from '@/themes/Clouds Midnight'
 import { BrillianceBlackTheme } from '@/themes/Brilliance Black'
 import { solarizedDarkTheme } from '@/themes/Solarized-dark'
 import Monaco from './Monaco'
+import {  Oval } from 'react-loader-spinner'
 
 const headers = {
   'X-Auth-Token': process.env.NEXT_PUBLIC_X_TOKEN,
@@ -25,7 +26,7 @@ const IDE = () => {
   const [language, setLanguage] = useState(['javascript', '63'])
   const [Theme, setTheme] = useState(['TomorrowNight', TomorrowNightTheme])
   const [WebSiteTheme, setWebSiteTheme] = useState(TomorrowNightTheme)
-  const backTheme = {}
+  const [Loading, setLoading] = useState(false)
   if(Theme[0]=== 'GitHubDark'){
      if(WebSiteTheme !== GitHubDarkTheme){
        setWebSiteTheme(GitHubDarkTheme)
@@ -114,7 +115,8 @@ const IDE = () => {
       }}
       onClick={()=>{
           //  const formattedCode = code.replace(/\n/g, '\\n').replace(/\"/g, '\\"');
-           axios.post(`${process.env.NEXT_PUBLIC_URL}/submissions/?base64_encoded=false&wait=true`, {
+          setLoading(true) 
+          axios.post(`${process.env.NEXT_PUBLIC_URL}/submissions/?base64_encoded=false&wait=true`, {
             "source_code": code,
             "language_id": language[1],
             "stdin": ""
@@ -123,6 +125,7 @@ const IDE = () => {
             // console.log(res.data)
             axios.get(`${process.env.NEXT_PUBLIC_URL}/submissions/${res.data.token}?base64_encoded=false&fields=`, {headers: headers})
             .then((res)=>{
+              setLoading(false)
               setOutput(res.data)
             })
            })
@@ -162,13 +165,37 @@ const IDE = () => {
       filter: `contrast(100%) hue-rotate(90deg)  invert(100%)`
     }}
     >
+      {Loading ? 
+      <div
+      className='w-full h-full flex justify-center place-items-center'
+      >
+      <Oval
+  height={80}
+  width={80}
+  color="#FC00D2"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  ariaLabel='oval-loading'
+  secondaryColor="#B55CB8"
+  strokeWidth={2}
+  strokeWidthSecondary={2}
+
+/>
+    
+      </div>:
+      <div>
       <p
       className='code-param'
       >Output: <span className='output-param'>{output?.stdout}</span> </p>
-      <p className='code-param'>Time: <span className='output-param'>{output?.time} <span className='output-param-unit'> ms</span> </span></p>
+      <p className='code-param'>Time: <span className='output-param'>{output?.time*1000} <span className='output-param-unit'> ms</span> </span></p>
       <p className='code-param'>Memory:<span className='output-param'> {Math.ceil(output?.memory/1024)} <span className='output-param-unit'> MB</span ></span> </p>
       <p className='code-param'>Error:<span className='output-param'>{output?.stderr}</span> </p>
       <p className='code-param'>compile_output: <span className='output-param'>{output?.compile_output}</span></p>
+      </div>
+      }
+      
+      
     </div>
    </div>
    </div>
