@@ -119,6 +119,7 @@ const IDE = () => {
             "stdin": ""
            }, {headers: headers})
            .then((res)=>{
+            // console.log(res.data)
             axios.get(`${process.env.NEXT_PUBLIC_URL}/submissions/${res.data.token}?base64_encoded=false&fields=`, {headers: headers})
             .then((res)=>{
               setOutput(res.data)
@@ -158,7 +159,7 @@ const IDE = () => {
       className='code-param'
       >Output: <span className='output-param'>{output?.stdout}</span> </p>
       <p className='code-param'>Time: <span className='output-param'>{output?.time} <span className='output-param-unit'> ms</span> </span></p>
-      <p className='code-param'>Memory:<span className='output-param'> {output?.memory} <span className='output-param-unit'> KB</span ></span> </p>
+      <p className='code-param'>Memory:<span className='output-param'> {Math.ceil(output?.memory/1024)} <span className='output-param-unit'> MB</span ></span> </p>
       <p className='code-param'>Error:<span className='output-param'>{output?.stderr}</span> </p>
       <p className='code-param'>compile_output: <span className='output-param'>{output?.compile_output}</span></p>
     </div>
