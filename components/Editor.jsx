@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import Editor, {useMonaco} from '@monaco-editor/react'
+import  {useMonaco} from '@monaco-editor/react'
 import Navbar from './Navbar'
 import axios from 'axios'
 import { TomorrowNightTheme } from '@/themes/Tomorrow-Night'
@@ -13,6 +13,7 @@ import { BlackboardTheme } from '@/themes/Blackboard'
 import { CloudsMidnightTheme } from '@/themes/Clouds Midnight'
 import { BrillianceBlackTheme } from '@/themes/Brilliance Black'
 import { solarizedDarkTheme } from '@/themes/Solarized-dark'
+import Monaco from './Monaco'
 
 const headers = {
   'X-Auth-Token': process.env.NEXT_PUBLIC_X_TOKEN,
@@ -128,12 +129,18 @@ const IDE = () => {
       }}
       >Run</button>
     </div>
-    <Editor
+    {/* <Editor
     className='h-[50vh] w-screen'
      language={language[0]}
      value={code}
      onChange={(value) => setCode(value)}
      theme={Theme[0]}
+   /> */}
+   <Monaco
+   language={language}
+    code={code}
+    setCode={setCode}
+    Theme={Theme}
    />
     </div>
    <div
