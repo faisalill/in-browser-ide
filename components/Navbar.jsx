@@ -32,6 +32,7 @@ const Navbar = (props) => {
                 <option value={['kotlin', '78']} >Kotlin</option>
                 <option value={['swift', '83']} >Swift</option>
                 <option value={['elixir', '57']} >Elixir</option>
+                <option value={['ruby', '72']} >Ruby</option>
             </select>
             <ThemeChanger  monaco={props.monaco} WebSiteTheme={props.WebSiteTheme} theme={props.theme} setTheme={props.setTheme}/>
         </div>
