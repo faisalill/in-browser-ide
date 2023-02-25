@@ -22,6 +22,7 @@ const Navbar = (props) => {
                 props.setLanguage([e.target.value.split(',')[0], e.target.value.split(',')[1]])                // console.log(props.language)
             }}>
                 <option value={['javascript', '63']}  >Javascript</option>
+                <option value={['typescript', '74']} >Typescript</option>
                 <option value={['objective-c', '75']} >C</option>
                 <option value={['cpp', '76']}>C++</option>
                 <option value={['python', '70']} >Python</option>
@@ -30,7 +31,7 @@ const Navbar = (props) => {
                 <option value={['go', '60']} >Go</option>
                 <option value={['kotlin', '78']} >Kotlin</option>
                 <option value={['swift', '83']} >Swift</option>
-                <option value={['typescript', '74']} >Typescript</option>
+                <option value={['elixir', '57']} >Elixir</option>
             </select>
             <ThemeChanger  monaco={props.monaco} WebSiteTheme={props.WebSiteTheme} theme={props.theme} setTheme={props.setTheme}/>
         </div>
