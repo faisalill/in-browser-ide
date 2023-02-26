@@ -132,13 +132,6 @@ const IDE = () => {
       }}
       >Run</button>
     </div>
-    {/* <Editor
-    className='h-[50vh] w-screen'
-     language={language[0]}
-     value={code}
-     onChange={(value) => setCode(value)}
-     theme={Theme[0]}
-   /> */}
    <Monaco
    language={language}
     code={code}
