@@ -147,7 +147,7 @@ const IDE = () => {
    />
     </div>
    <div
-   className='h-[39.05vh] w-screen text-white p-5'
+   className='h-[39.05vh] w-screen sm:px-10 md:px-20 lg:px-52 xl:px-96 text-white p-5'
    style={{
     backgroundColor: WebSiteTheme.colors['editor.background'],
   }}
