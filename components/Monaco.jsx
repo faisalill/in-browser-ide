@@ -1,6 +1,4 @@
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import { Audio, Bars, Vortex } from 'react-loader-spinner';
 const Editor = dynamic(() => import('@monaco-editor/react').then(mod => {
     return mod.default;
 }), { ssr: false });
@@ -20,7 +18,7 @@ const Monaco = (props) => {
      }}
      >
 <h2 className='mb-4 bg-gradient-to-r from-red-500  via-pink-500 to-purple-500 bg-clip-text text-transparent font-bold'>Loading Editor...</h2>
-<Bars
+{/* <Bars
   height="80"
   width="80"
   color="#ff5869"
@@ -28,7 +26,8 @@ const Monaco = (props) => {
   wrapperStyle={{}}
   wrapperClass=""
   visible={true}
-/>
+/> */}
+<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
      </div>
      }
